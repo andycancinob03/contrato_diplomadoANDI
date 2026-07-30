@@ -128,7 +128,7 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--text);min-he
   <div class="logos">
     <img src="https://lobbymap.org/site//data/001/361/1361294.png" alt="ANDI" onerror="this.style.display='none'">
     <div class="sep"></div>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Logotipo_de_la_Universidad_del_Norte.svg" alt="Uninorte" onerror="this.style.display='none'">
+    <img src="https://radcolombia.org/web/sites/default/files/archivos/instituciones/universidad-norte/logo-uninorte.png" alt="Uninorte" onerror="this.style.display='none'">
   </div>
   <p class="eyebrow">Storytelling &amp; Presentaciones de Alto Impacto</p>
   <h1 class="intro-title">Contrato<br>conmigo mismo</h1>
@@ -161,7 +161,7 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--text);min-he
     <div class="c-logos">
       <img src="https://lobbymap.org/site//data/001/361/1361294.png" alt="ANDI" onerror="this.style.display='none'">
       <div class="sep"></div>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Logotipo_de_la_Universidad_del_Norte.svg" alt="Uninorte" onerror="this.style.display='none'">
+      <img src="https://radcolombia.org/web/sites/default/files/archivos/instituciones/universidad-norte/logo-uninorte.png" alt="Uninorte" onerror="this.style.display='none'">
     </div>
     <div class="c-hdr">
       <p class="c-eyebrow" id="c-eyebrow"></p>
@@ -186,7 +186,7 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--text);min-he
       <div class="c-ftr-logos">
         <img src="https://lobbymap.org/site//data/001/361/1361294.png" alt="ANDI" onerror="this.style.display='none'">
         <div class="sep"></div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Logotipo_de_la_Universidad_del_Norte.svg" alt="Uninorte" onerror="this.style.display='none'">
+        <img src="https://radcolombia.org/web/sites/default/files/archivos/instituciones/universidad-norte/logo-uninorte.png" alt="Uninorte" onerror="this.style.display='none'">
       </div>
       <p class="c-ftr-txt">Diplomado ANDI Atlántico · Universidad del Norte</p>
     </div>
@@ -337,58 +337,59 @@ function stripMd(text){
 function genContratoLocal(a){
   const g = a.genero || 'Masculino';
   const f = (m,fe,nb) => g==='Femenino'?fe:g==='No binario'?nb:m;
-
   const comunicador  = f('comunicador','comunicadora','comunicadore');
   const comprometido = f('comprometido','comprometida','comprometide');
   const consciente   = 'consciente';
+  const cap = s => s ? s.charAt(0).toUpperCase()+s.slice(1).replace(/\.$/,'') : '';
 
-  const arqDesc = {
-    'El Héroe':     `${comunicador} que inspira desde la superación y el esfuerzo`,
-    'El Sabio':     `${comunicador} que construye desde el conocimiento y el análisis`,
-    'El Creador':   `${comunicador} que propone desde la imaginación y la originalidad`,
-    'El Cuidador':  `${comunicador} que conecta desde la empatía y el servicio`,
-    'El Forajido':  `${comunicador} que transforma desde el cuestionamiento honesto`,
-    'El Mago':      `${comunicador} que cataliza el cambio en quienes le escuchan`,
-    'El Gobernante':`${comunicador} que lidera desde la estructura y la claridad`,
-    'El Explorador':`${comunicador} que descubre y comparte desde la curiosidad`,
+  const arqP1 = {
+    'El Héroe':     `Soy ${comunicador} que ha aprendido que la valentía más difícil no está en el escenario — está en decidir qué historia merece contarse.`,
+    'El Sabio':     `Soy ${comunicador} que entiende que el conocimiento solo tiene valor cuando encuentra las palabras para llegar a quien lo necesita.`,
+    'El Creador':   `Soy ${comunicador} que sabe que la idea más brillante muere en silencio si no encuentra la forma de ser contada.`,
+    'El Cuidador':  `Soy ${comunicador} que conecta desde la empatía, y que hoy reconoce que esa conexión también requiere estructura y presencia.`,
+    'El Forajido':  `Soy ${comunicador} que cuestiona las convenciones, y que hoy asume que transformar primero requiere ser entendido.`,
+    'El Mago':      `Soy ${comunicador} que cataliza el cambio en otros, y que hoy reconoce que ese poder empieza con la claridad de su propia narrativa.`,
+    'El Gobernante':`Soy ${comunicador} que lidera, y que hoy comprende que la autoridad más genuina no se impone — se narra.`,
+    'El Explorador':`Soy ${comunicador} que descubre, y que hoy entiende que cada hallazgo pierde su valor si no sabe cómo compartirlo.`,
   };
 
-  const dimFacil = {
-    'Historia':   'construir narrativas con estructura, protagonistas y conflicto claro',
-    'Significado':'conectar mis mensajes con valores y propósitos profundos',
-    'Ritual':     'crear momentos de conexión emocional genuina con mi audiencia',
-    'Transmedia': 'mantener coherencia narrativa a través de múltiples canales',
+  const dimFacilDesc = {
+    'Historia':   'construir narrativas con estructura, tensión y protagonistas claros',
+    'Significado':'conectar cada mensaje con los valores y propósitos que le dan sentido',
+    'Ritual':     'crear momentos de conexión emocional genuina con quienes me escuchan',
+    'Transmedia': 'mantener un hilo narrativo coherente en todos los canales donde aparezco',
   };
 
-  const dimDificil = {
-    'Historia':   'estructurar mis historias con más tensión narrativa y protagonistas definidos',
-    'Significado':'conectar mis mensajes con un propósito más profundo y explícito',
-    'Ritual':     'construir momentos de conexión emocional más genuinos y deliberados',
-    'Transmedia': 'mantener un hilo narrativo coherente en todos mis canales de comunicación',
+  const dimDificilVerbo = {
+    'Historia':   'estructurar historias con más tensión narrativa y conflicto claro',
+    'Significado':'profundizar en el propósito detrás de cada mensaje que construyo',
+    'Ritual':     'diseñar momentos de conexión emocional más deliberados y genuinos',
+    'Transmedia': 'mantener coherencia narrativa en todos mis canales de comunicación',
   };
 
   const arqCierre = {
-    'El Héroe':     'la valentía de mostrarme tal como soy',
-    'El Sabio':     'la profundidad de lo que sé y la honestidad de compartirlo',
-    'El Creador':   'la originalidad de una voz que solo yo puedo tener',
-    'El Cuidador':  'la calidez con la que me conecto con quienes me escuchan',
-    'El Forajido':  'la honestidad radical que me distingue',
-    'El Mago':      'la capacidad de transformar lo que toco con mis palabras',
-    'El Gobernante':'la claridad y la presencia con la que lidero cada conversación',
-    'El Explorador':'la curiosidad genuina que hace que valga la pena escucharme',
+    'El Héroe':     `La valentía de mostrarme — esa es la historia que vale la pena contar.`,
+    'El Sabio':     `La profundidad de lo que sé solo importa cuando encuentra las palabras para llegar.`,
+    'El Creador':   `La voz más original que puedo ofrecer es, precisamente, la mía.`,
+    'El Cuidador':  `Conectar de verdad con otros exige primero conectar con lo que quiero decirles.`,
+    'El Forajido':  `Transformar requiere ser entendido — y eso empieza por saber qué historia cuento.`,
+    'El Mago':      `El cambio que catalizo en otros empieza en la claridad de mi propia narrativa.`,
+    'El Gobernante':`Liderar con presencia significa saber qué historia represento en cada sala.`,
+    'El Explorador':`Cada descubrimiento merece ser contado — y ahora sé cómo hacerlo.`,
   };
 
   const arq = a.arquetipo || 'El Héroe';
-  const cap = s => s ? s.charAt(0).toUpperCase()+s.slice(1).replace(/\.$/,'') : '';
+  const arqTexto = arqP1[arq] || `Soy ${comunicador} con una voz propia que hoy reconoce lo que implica usarla.`;
 
-  const p1 = `Termino este diplomado más ${consciente} de cómo me comunico que cuando llegué. Soy ${arqDesc[arq]||comunicador}, y mi mayor fortaleza narrativa está en ${dimFacil[a.dim_facil]||a.dim_facil}. La palabra que me define hoy es "${a.palabra}" — y asumo todo lo que eso implica.`;
+  const p1 = `Termino este diplomado más ${consciente} de cómo me comunico que cuando llegué. ${arqTexto} Mi fortaleza natural está en ${dimFacilDesc[a.dim_facil]||a.dim_facil}, y la palabra que me define hoy es "${a.palabra}" — con todo lo que eso implica.`;
 
-  const p2 = `Me comprometo a:\n— ${cap(a.cambio)}.\n— Compartir lo que aprendí con ${a.persona}, porque enseñar es la forma más honesta de consolidar un aprendizaje.\n— ${cap(dimDificil[a.dim_dificil]||a.dim_dificil)}.`;
+  const p2 = `Me comprometo a:\n— ${cap(a.cambio)}.\n— ${cap(a.compromiso)}.\n— ${cap(dimDificilVerbo[a.dim_dificil]||a.dim_dificil)}, que es donde más tengo por crecer.`;
 
-  const p3 = `${cap(a.incomodidad)} fue el momento más incómodo de este proceso. No lo minimizo: fue exactamente ahí donde ocurrió el aprendizaje real.`;
+  const inco = cap(a.incomodidad);
+  const p3 = `${inco} fue el momento que más me incomodó. No fue un accidente: fue la señal más clara de dónde estaba el aprendizaje real.`;
 
-  const palabra = cap(a.palabra);
-  const p4 = `"${palabra}" no es solo una palabra — es un punto de partida. Desde hoy, me comunico desde ${arqCierre[arq]||'todo lo que aprendí aquí'}.`;
+  const cierre = arqCierre[arq] || `"${cap(a.palabra)}" es el punto de partida — no la llegada.`;
+  const p4 = `"${cap(a.palabra)}" ya no es solo una palabra. ${cierre}`;
 
   return [p1,p2,p3,p4].join('\n\n');
 }
@@ -396,8 +397,7 @@ function genContratoLocal(a){
 function genContract(){
   setTimeout(()=>{
     clearInterval(genIv);
-    const texto = genContratoLocal(ans);
-    showContract(stripMd(texto));
+    showContract(genContratoLocal(ans));
   }, 2500);
 }
 
@@ -426,7 +426,7 @@ function abrirParaImprimir(){
                : 'Contrato conmigo mismo';
 
   const logoAndi = 'https://lobbymap.org/site//data/001/361/1361294.png';
-  const logoUni  = 'https://upload.wikimedia.org/wikipedia/commons/3/30/Logotipo_de_la_Universidad_del_Norte.svg';
+  const logoUni  = 'https://radcolombia.org/web/sites/default/files/archivos/instituciones/universidad-norte/logo-uninorte.png';
 
   const escaped = body.replace(/</g,'&lt;').replace(/>/g,'&gt;');
 
